@@ -1,16 +1,16 @@
 require 'formula'
 
-class Psopt302Patch < Formula
-  homepage 'https://code.google.com/p/psopt/'
-  url 'http://psopt.googlecode.com/files/patch_3.02.zip'
-  sha1 'fd04038126dcfe4e1e9d95a26c7795423ac73276'
+#class Psopt302Patch < Formula
+#  homepage 'https://code.google.com/p/psopt/'
+#  url 'http://psopt.googlecode.com/files/patch_3.02.zip'
+#  sha1 'fd04038126dcfe4e1e9d95a26c7795423ac73276'
 
-  def patches
-    # include assert, resolve ambiguous reference to rank, and fix dimension
-    # errors in copy_decision_variables and lagrange_interpolation in psopt.cxx
-    { :p3 => DATA }
-  end
-end
+#  def patches
+#    # include assert, resolve ambiguous reference to rank, and fix dimension
+#    # errors in copy_decision_variables and lagrange_interpolation in psopt.cxx
+#    { :p3 => DATA }
+#  end
+#end
 
 class Psopt < Formula
   homepage 'https://code.google.com/p/psopt/'
@@ -25,10 +25,10 @@ class Psopt < Formula
   depends_on 'lusol' => :build
 
   def install
-    # Download and apply Psopt 3.02 patch
-    Psopt302Patch.new.brew do
-      (buildpath/'PSOPT/src').install 'psopt.cxx'
-    end
+    # # Download and apply Psopt 3.02 patch
+    #Psopt302Patch.new.brew do
+    #  (buildpath/'PSOPT/src').install 'psopt.cxx'
+    #end
 
     # Don't need to build CXSparse or LUSOL here
     inreplace 'Makefile',
