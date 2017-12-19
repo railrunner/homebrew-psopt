@@ -74,7 +74,7 @@ class Psopt < Formula
       s.remove_make_var! 'CXX'
     end
 
-    inreplace 'PSOPT/src/psopt.h', '#include "IpIpoptApplication.hpp"', '#include <IpIpoptApplication.hpp>'
+    #inreplace 'PSOPT/src/psopt.h', '#include "IpIpoptApplication.hpp"', '#include <IpIpoptApplication.hpp>'
 
     system 'make', 'all'
 
