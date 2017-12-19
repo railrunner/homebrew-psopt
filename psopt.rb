@@ -37,10 +37,10 @@ class Psopt < Formula
               'all: $(DMATRIX_LIBS)'
 
     # Correct paths to dependencies
-    ipopt_prefix = Formula.factory('ipopt').prefix
-    adolc_prefix = Formula.factory('adol-c').prefix
-    suite_sparse_prefix = Formula.factory('suite-sparse').prefix
-    lusol_prefix = Formula.factory('lusol').prefix
+    ipopt_prefix = Formulary.factory('ipopt').prefix
+    adolc_prefix = Formulary.factory('adol-c').prefix
+    suite_sparse_prefix = Formulary.factory('suite-sparse').prefix
+    lusol_prefix = Formulary.factory('lusol').prefix
 
     inreplace ['PSOPT/lib/Makefile', 'PSOPT/examples/Makefile_linux.inc'] do |s|
       s.change_make_var! 'prefix', ipopt_prefix
