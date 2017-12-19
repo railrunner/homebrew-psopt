@@ -77,6 +77,12 @@ class Psopt < Formula
 
     #inreplace 'PSOPT/src/psopt.h', '#include "IpIpoptApplication.hpp"', '#include <IpIpoptApplication.hpp>'
 
+    inreplace 'dmatrix/src/dmatrixv.cxx' do |s|
+      # Remove extern "C" around standard includes in dmatrixv.cxx
+      s.sub! 'extern "C" {', ''
+      s.sub! '}', ''
+    end
+    
     system 'make', 'all'
 
     lib.install 'dmatrix/lib/libdmatrix.a'
