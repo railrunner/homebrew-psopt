@@ -16,6 +16,7 @@ class Psopt < Formula
   homepage 'https://code.google.com/p/psopt/'
   url 'https://github.com/PSOPT/psopt/archive/master.zip'
   sha256 'd16324ee166fc8513d5862d3057c00fda6979dc107090428e1ca201accd2ddd4'
+  version '4.0'
 
   depends_on 'gnuplot' => :optional
   depends_on 'openblas' => :optional
