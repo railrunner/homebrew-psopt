@@ -3,7 +3,7 @@ require 'formula'
 class Lusol < Formula
   homepage 'http://www.stanford.edu/group/SOL/software/lusol.html'
   url 'http://sourceforge.net/projects/lpsolve/files/LUSOL/2.2.1.0/LUSOL2.2.1.0.zip/download'
-  sha1 '9e12a0c774479a66146cf1de6936732d21c77087'
+  sha256 'c474a2f6e96ed2a79dbf3131aec8c12f71dfdfcc5846c060180be0cc47d9773c'
 
   def patches
     # fixes undefined symbols for max and _strupr, and outputs a return code from lusolmain.c
