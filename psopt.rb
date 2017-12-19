@@ -14,8 +14,8 @@ require 'formula'
 
 class Psopt < Formula
   homepage 'https://code.google.com/p/psopt/'
-  url 'https://github.com/PSOPT/psopt/archive/master.zip'
-  sha256 'd16324ee166fc8513d5862d3057c00fda6979dc107090428e1ca201accd2ddd4'
+  url 'https://github.com/railrunner/psopt/archive/master.zip'
+  sha256 '8c3f97d285c94bd50bfe56df77fb0a15b4e61a8028f89035ea6d865ed08ee288'
   version '4.0'
 
   depends_on 'gnuplot' => :optional
