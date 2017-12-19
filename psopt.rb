@@ -42,7 +42,7 @@ class Psopt < Formula
     suite_sparse_prefix = Formulary.factory('suite-sparse').prefix
     lusol_prefix = Formulary.factory('lusol').prefix
 
-    inreplace 'PSOPT/lib/Makefile', 'IPOPTINCDIR = -I${prefix}/Ipopt/src/Interfaces -I${prefix}/Ipopt/src/Common -I${prefix}/Ipopt/src/LinAlg', 'IPOPTINCDIR = -I${prefix}/coin'
+    inreplace 'PSOPT/lib/Makefile', 'IPOPTINCDIR = -I${prefix}/Ipopt/src/Interfaces -I${prefix}/Ipopt/src/Common -I${prefix}/Ipopt/src/LinAlg', 'IPOPTINCDIR = -I${prefix}/include/coin'
     
     inreplace ['PSOPT/lib/Makefile', 'PSOPT/examples/Makefile_linux.inc'] do |s|
       s.change_make_var! 'prefix', ipopt_prefix  
