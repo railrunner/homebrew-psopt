@@ -14,8 +14,8 @@ end
 
 class Psopt < Formula
   homepage 'https://code.google.com/p/psopt/'
-  url 'http://psopt.googlecode.com/files/Psopt3.tgz'
-  sha1 '3cdcb7eb82bb3862376488026bd47413ec31161c'
+  url 'https://github.com/PSOPT/psopt/archive/master.zip'
+  sha256 'd16324ee166fc8513d5862d3057c00fda6979dc107090428e1ca201accd2ddd4'
 
   depends_on 'gnuplot' => :optional
   depends_on 'openblas' => :optional
