@@ -50,6 +50,8 @@ class Psopt < Formula
       s.gsub! 'CXXFLAGS      = -O0 -g', 'CXXFLAGS      = -O0 -g -std=c++11 -stdlib=libstdc++'
     end
     
+    inreplace 'dmatrix/lib/Makefile', 'CXXFLAGS      = -O0 -g','CXXFLAGS      = -O0 -g -std=c++11 -stdlib=libstdc++'
+    
     #remove build_target psopt libs from examples
     #inreplace ['PSOPT/examples/*/Makefile'] do |s|
     #  s.remove_make_var! 'PSOPT_LIBS'
