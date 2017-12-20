@@ -93,7 +93,7 @@ class Psopt < Formula
       s.sub! '}', ''
     end
     
-    system 'bash -c', 'make all'
+    system "make all"
     
     prefix.install Dir["PSOPT/examples"]
     lib.install 'dmatrix/lib/libdmatrix.a'
