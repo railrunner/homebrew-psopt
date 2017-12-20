@@ -86,7 +86,7 @@ class Psopt < Formula
     
     system 'make', 'all'
     
-    prefix.install Dir["output/PSOPT/examples"]
+    prefix.install Dir["PSOPT/examples"]
     lib.install 'dmatrix/lib/libdmatrix.a'
     lib.install 'PSOPT/lib/libpsopt.a'
     include.install 'dmatrix/include/dmatrixv.h'
