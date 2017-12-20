@@ -47,7 +47,7 @@ class Psopt < Formula
     
     inreplace ['PSOPT/lib/Makefile', 'PSOPT/examples/Makefile_linux.inc'] do |s|
       s.change_make_var! 'prefix', ipopt_prefix
-      s.gsub! 'CXXFLAGS      = -O0 -g', 'CXXFLAGS      = -O0 -g -std=c++11'
+      s.gsub! 'CXXFLAGS      = -O0 -g', 'CXXFLAGS      = -O0 -g -std=c++11 -stdlib=libstdc++'
     end
     
     #remove build_target psopt libs from examples
