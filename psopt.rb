@@ -18,7 +18,7 @@ class Psopt < Formula
   sha256 'b48e47b117635c9e1c5fd456a34535dd7ceeec342f0c86e34b287e9c55dc8801'
   version '4.0'
   env :std
-  fails_with: clang
+  fails_with :clang
 
   depends_on 'gnuplot' => :optional
   depends_on 'openblas' => :optional
