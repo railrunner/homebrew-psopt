@@ -43,6 +43,7 @@ class Psopt < Formula
     lusol_prefix = Formulary.factory('lusol').prefix
 
     inreplace 'PSOPT/lib/Makefile', 'IPOPTINCDIR = -I${prefix}/Ipopt/src/Interfaces -I${prefix}/Ipopt/src/Common -I${prefix}/Ipopt/src/LinAlg', 'IPOPTINCDIR = -I${prefix}/include/coin'
+    inreplace 'PSOPT/examples/Makefile_linux.inc', 'IPOPTINCDIR = -I${prefix}/Ipopt/src/Interfaces -I${prefix}/Ipopt/src/Common -I${prefix}/Ipopt/src/LinAlg', 'IPOPTINCDIR = -I${prefix}/include/coin'
     
     inreplace ['PSOPT/lib/Makefile', 'PSOPT/examples/Makefile_linux.inc'] do |s|
       s.change_make_var! 'prefix', ipopt_prefix
