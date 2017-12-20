@@ -72,6 +72,7 @@ class Psopt < Formula
     inreplace 'PSOPT/examples/Makefile_linux.inc' do |s|
       s.change_make_var! 'IPOPT_LIBS', "`cat #{ipopt_prefix}/share/coin/doc/Ipopt/ipopt_addlibs_cpp.txt`"
       s.change_make_var! 'ADOLC_LIBS', "-L#{adolc_prefix}/lib -ladolc"
+      s.change_make_var! 'DXMATRIX_LIBS', "../../lib/libdmatrix.a"
     end
 
     inreplace ['dmatrix/lib/Makefile',
