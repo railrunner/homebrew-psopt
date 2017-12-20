@@ -47,10 +47,10 @@ class Psopt < Formula
     
     inreplace ['PSOPT/lib/Makefile', 'PSOPT/examples/Makefile_linux.inc'] do |s|
       s.change_make_var! 'prefix', ipopt_prefix
-      s.gsub! 'CXXFLAGS      = -O0 -g', 'CXXFLAGS      = -O0 -g -std=c++11 -stdlib=libstdc++'
+      s.gsub! 'CXXFLAGS      = -O0 -g', 'CXXFLAGS      = -O0 -g -std=c++11 -stdlib=libstdc++ -Wno-keyword-macro'
     end
     
-    inreplace 'dmatrix/lib/Makefile', 'CXXFLAGS      = -O0 -g','CXXFLAGS      = -O0 -g -std=c++11 -stdlib=libstdc++'
+    inreplace 'dmatrix/lib/Makefile', 'CXXFLAGS      = -O0 -g','CXXFLAGS      = -O0 -g -std=c++11 -stdlib=libstdc++ -Wno-keyword-macro'
     
     #remove build_target psopt libs from examples
     #inreplace ['PSOPT/examples/*/Makefile'] do |s|
@@ -92,6 +92,12 @@ class Psopt < Formula
       s.sub! 'extern "C" {', ''
       s.sub! '}', ''
     end
+    
+    system "cd PSOPT/lib"
+    
+    system "make"
+    
+    system "cd ../.."
     
     system 'make', 'all'
     
