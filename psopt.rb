@@ -92,8 +92,9 @@ class Psopt < Formula
       s.sub! 'extern "C" {', ''
       s.sub! '}', ''
     end
-    
-    system "make all"
+    system "cd dmatrix/lib; make"
+    system "cd ../../PSOPT/lib; make"
+    system "cd ../..; make all"
     
     prefix.install Dir["PSOPT/examples"]
     lib.install 'dmatrix/lib/libdmatrix.a'
