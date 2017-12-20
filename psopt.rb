@@ -49,7 +49,12 @@ class Psopt < Formula
       s.change_make_var! 'prefix', ipopt_prefix
       s.gsub! 'CXXFLAGS      = -O0 -g', 'CXXFLAGS      = -O0 -g -std=c++11'
     end
-
+    
+    #remove build_target psopt libs from examples
+    inreplace ['PSOPT/examples/*/Makefile] do |s|
+      s.gsub! '$(PSOPT_LIBS)', ''
+    end
+    
     inreplace ['dmatrix/examples/Makefile', 'PSOPT/examples/Makefile_linux.inc'] do |s|
       s.change_make_var! 'CXSPARSE', suite_sparse_prefix
       s.change_make_var! 'LUSOL', lusol_prefix
