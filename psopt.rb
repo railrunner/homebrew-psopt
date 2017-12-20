@@ -17,6 +17,7 @@ class Psopt < Formula
   url 'https://github.com/railrunner/psopt/archive/master.zip'
   sha256 'b48e47b117635c9e1c5fd456a34535dd7ceeec342f0c86e34b287e9c55dc8801'
   version '4.0'
+  env :std
 
   depends_on 'gnuplot' => :optional
   depends_on 'openblas' => :optional
@@ -92,6 +93,7 @@ class Psopt < Formula
       s.sub! 'extern "C" {', ''
       s.sub! '}', ''
     end
+    ENV.deparallelize
     system "cd dmatrix/lib; make"
     system "bash -c 'cd PSOPT/lib; make'"
     system "make all"
