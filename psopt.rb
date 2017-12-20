@@ -82,12 +82,13 @@ class Psopt < Formula
       s.change_make_var! 'PSOPTSRCDIR', '../../include'
     end
 
-    #inreplace ['dmatrix/lib/Makefile',
-    #           'dmatrix/examples/Makefile',
-    #           'PSOPT/lib/Makefile',
-    #           'PSOPT/examples/Makefile_linux.inc'] do |s|
-    #  s.remove_make_var! 'CXX'
-    #end
+    inreplace ['dmatrix/lib/Makefile',
+               'dmatrix/examples/Makefile',
+               'PSOPT/lib/Makefile',
+               'PSOPT/examples/Makefile_linux.inc'] do |s|
+      s.change_make_var! 'CXX', 'g++-7'
+      s.change_make_var! 'CC', 'gcc-7'
+    end
 
     #inreplace 'PSOPT/src/psopt.h', '#include "IpIpoptApplication.hpp"', '#include <IpIpoptApplication.hpp>'
 
