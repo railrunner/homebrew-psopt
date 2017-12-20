@@ -90,7 +90,7 @@ class Psopt < Formula
     lib.install 'dmatrix/lib/libdmatrix.a'
     lib.install 'PSOPT/lib/libpsopt.a'
     include.install 'dmatrix/include/dmatrixv.h'
-    include.install Dir['PSOPT/src/*.h'
+    include.install Dir['PSOPT/src/*.h']
     bin.install 'PSOPT/examples/obstacle/obstacle'
     bin.install 'PSOPT/examples/bioreactor/bioreactor'
     bin.install 'PSOPT/examples/brymr/brymr'
