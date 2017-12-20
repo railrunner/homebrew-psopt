@@ -58,6 +58,9 @@ class Psopt < Formula
     #  s.remove_make_var! 'PSOPT_LIBS'
     #end
     
+    # patch plot.cxx to work with newer gnuplot
+    inreplace 'PSOPT/src/plot.cxx', 'fprintf(gscript,"\nset data style lines");', 'fprintf(gscript,"\nset style data lines");'
+    
     inreplace ['dmatrix/examples/Makefile', 'PSOPT/examples/Makefile_linux.inc'] do |s|
       s.change_make_var! 'CXSPARSE', suite_sparse_prefix
       s.change_make_var! 'LUSOL', lusol_prefix
