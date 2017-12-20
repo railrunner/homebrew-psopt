@@ -101,7 +101,6 @@ class Psopt < Formula
     system "bash -c 'cd PSOPT/lib; make'"
     system "make all"
     
-    src.install Dir["*"]
     prefix.install Dir["PSOPT/examples"]
     lib.install 'dmatrix/lib/libdmatrix.a'
     lib.install 'PSOPT/lib/libpsopt.a'
