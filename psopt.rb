@@ -15,7 +15,7 @@ require 'formula'
 class Psopt < Formula
   homepage 'https://code.google.com/p/psopt/'
   url 'https://github.com/railrunner/psopt/archive/master.zip'
-  sha256 '0f3d65ee79481e33fb423120357503c3502e148b5c9ca12c2d1d0807ee623352'
+  sha256 'e7a6d76b6c604a17a19c2eb878b3c6bb47ab6c37bce9b805454a0b563a57cebe'
   version '4.0'
   env :std
   fails_with :clang
