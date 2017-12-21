@@ -62,9 +62,9 @@ class Psopt < Formula
     # patch plot.cxx to work with newer gnuplot
     inreplace 'PSOPT/src/plot.cxx', 'fprintf(gscript,"\nset data style lines");', 'fprintf(gscript,"\nset style data lines");'
     # replace deprecated string to char* conversion
-    inreplace 'PSOPT/src/psopt.h' , 'void psopt_print(Workspace* workspace, char* msg);', 'void psopt_print(Workspace* workspace, const char* msg);'
-    inreplace 'PSOPT/src/plot.cxx', 'char*', 'const char*'
-    inreplace 'PSOPT/src/plot.cxx', '#define FREE_ARG const char*', '#define FREE_ARG char*'
+    #inreplace 'PSOPT/src/psopt.h' , 'void psopt_print(Workspace* workspace, char* msg);', 'void psopt_print(Workspace* workspace, const char* msg);'
+    #inreplace 'PSOPT/src/plot.cxx', 'char*', 'const char*'
+    #inreplace 'PSOPT/src/plot.cxx', '#define FREE_ARG const char*', '#define FREE_ARG char*'
     
     
     inreplace ['dmatrix/examples/Makefile', 'PSOPT/examples/Makefile_linux.inc'] do |s|
